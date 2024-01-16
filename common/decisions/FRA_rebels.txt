@@ -1,0 +1,83 @@
+FRA_rebel_category = {
+	FRA_rebel_COR = {
+		visible = {
+			original_tag = SRD
+		}
+		available = {
+			tag = SRD
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 10
+		complete_effect = {
+			FRA = { 
+				add_opinion_modifier = { 
+					target = SRD
+					modifier = large_decrease
+				}
+			}
+		}
+		remove_effect = {
+			FRA = {
+				country_event = {
+					id = FRA_rebel.1
+				}
+			}
+		}
+	}
+	FRA_rebel_ALS = {
+		visible = {
+			original_tag = BAY
+		}
+		available = {
+			tag = BAY
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 10
+		complete_effect = {
+			FRA = { 
+				add_opinion_modifier = { 
+					target = BAY
+					modifier = large_decrease
+				}
+			}
+			BAY = {
+				add_state_core = 28
+			}
+		}
+		remove_effect = {
+			FRA = {
+				country_event = {
+					id = FRA_rebel.2
+				}
+			}
+		}
+	}
+	FRA_rebel_BEL = {
+		visible = {
+			original_tag = BEL
+		}
+		available = {
+			tag = BEL
+		}
+		fire_only_once = yes
+		cost = 75
+		days_remove = 10
+		complete_effect = {
+			FRA = { 
+				add_opinion_modifier = { 
+					target = BEL
+					modifier = large_decrease
+				}
+			}
+		}
+		remove_effect = {
+			FRA = {
+				country_event = {
+					id = FRA_rebel.3
+				}
+			}
+		}
+	}
+}

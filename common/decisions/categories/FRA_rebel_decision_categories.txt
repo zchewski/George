@@ -1,0 +1,3 @@
+FRA_rebel_category = {
+	icon = generic_political_actions
+}

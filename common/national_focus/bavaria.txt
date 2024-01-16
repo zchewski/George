@@ -1,0 +1,1011 @@
+focus_tree = {
+	id = bavaria_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BAY 
+		}
+	}
+
+	default = no
+
+	reset_on_civilwar = no
+
+	#shared_focus = <Shared Focus ID>
+
+	#continuous_focus_position = { x = <position> y = <position> }
+	
+	initial_show_position = {
+		x = 1
+		y = 1
+		#offset = {
+		#	x = <integer>
+		#	y = <integer>
+		#	<trigger>
+		#}
+	}
+	focus = {
+		id = BAY_revolution_of_love
+		icon = "GFX_focus_SOV_the_glory_of_the_red_army_communism"
+		cost = 5
+		x = 6
+		y = 0
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_comedy_of_errors
+		prerequisite = {
+			focus = BAY_revolution_of_love
+		}
+		icon = "BAY_comedy_of_errors"
+		cost = 5
+		relative_position_id = BAY_revolution_of_love
+		x = -6
+		y = 1
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = 60
+				producer = SWI
+			}
+			add_opinion_modifier = {
+				target = SWI
+				modifier = small_decrease
+			}
+			SWI = {
+				add_opinion_modifier = {
+					target = BAY
+					modifier = small_decrease
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_trains_trains_and_trains
+		prerequisite = {
+			focus = BAY_comedy_of_errors
+		}
+		icon = "BAY_trains"
+		cost = 5
+		relative_position_id = BAY_comedy_of_errors
+		x = 0
+		y = 1
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_schwabing_coffee
+		prerequisite = {
+			focus = BAY_trains_trains_and_trains
+		}
+		icon = "BAY_coffee"
+		cost = 10
+		relative_position_id = BAY_trains_trains_and_trains
+		x = -1
+		y = 1
+		completion_reward = {
+			52 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_stuttgart_coffee
+		prerequisite = {
+			focus = BAY_schwabing_coffee
+		}
+		icon = "BAY_coffee"
+		cost = 20
+		relative_position_id = BAY_schwabing_coffee
+		x = 0
+		y = 1
+		completion_reward = {
+			50 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_regensburg_coffee
+		prerequisite = {
+			focus = BAY_trains_trains_and_trains
+		}
+		icon = "BAY_coffee"
+		cost = 10
+		relative_position_id = BAY_trains_trains_and_trains
+		x = 1
+		y = 1
+		completion_reward = {
+			53 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_nuremberg_coffee
+		prerequisite = {
+			focus = BAY_regensburg_coffee
+		}
+		icon = "BAY_coffee"
+		cost = 10
+		relative_position_id = BAY_regensburg_coffee
+		x = 0
+		y = 1
+		completion_reward = {
+			54 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_more_coffee
+		prerequisite = {
+			focus = BAY_nuremberg_coffee
+		}
+		prerequisite = {
+			focus = BAY_stuttgart_coffee
+		}
+		icon = "BAY_coffee"
+		cost = 10
+		relative_position_id = BAY_nuremberg_coffee
+		x = -1
+		y = 1
+		completion_reward = {
+			BAY = {
+				add_ideas = BAY_idea_more_coffee
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_coffee_school
+		prerequisite = {
+			focus = BAY_more_coffee
+		}
+		icon = "GFX_focus_research2"
+		cost = 10
+		relative_position_id = BAY_more_coffee
+		x = 0
+		y = 1
+		completion_reward = {
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_love_prevails
+		prerequisite = {
+			focus = BAY_revolution_of_love
+		}
+		mutually_exclusive = {
+			focus = BAY_stalism
+			focus = BAY_monarchism
+		}
+		icon = "BAY_love_prevails"
+		cost = 5
+		relative_position_id = BAY_comedy_of_errors
+		x = 4
+		y = 0
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = georgism
+				popularity = 0.2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_socialism
+		prerequisite = {
+			focus = BAY_love_prevails
+		}
+		icon = "BAY_red_star"
+		cost = 5
+		relative_position_id = BAY_love_prevails
+		x = -1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.3
+			}
+			add_political_power = 75
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_soviets
+		prerequisite = {
+			focus = BAY_socialism
+		}
+		mutually_exclusive = {
+			focus = BAY_tenements
+		}
+		icon = "BAY_red_star"
+		cost = 5
+		relative_position_id = BAY_socialism
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = BAY_popular_soviets
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_free_money
+		prerequisite = {
+			focus = BAY_soviets
+		}
+		icon = "BAY_gfx_free_money"
+		cost = 5
+		relative_position_id = BAY_soviets
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = BAY_free_money
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_standardized_homes
+		prerequisite = {
+			focus = BAY_free_money
+		}
+		icon = "BAY_standardized_homes"
+		cost = 5
+		relative_position_id = BAY_free_money
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = BAY_standardized_homes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_georgism
+		prerequisite = {
+			focus = BAY_love_prevails
+		}
+		icon = "BAY_georgism"
+		cost = 5
+		relative_position_id = BAY_love_prevails
+		x = 1
+		y = 1
+		completion_reward = {
+			set_politics = {
+				ruling_party = georgism
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = georgism
+				popularity = 0.6
+			}
+			add_political_power = 75
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_tenements
+		mutually_exclusive = {
+			focus = BAY_soviets
+		}
+		prerequisite = {
+			focus = BAY_georgism
+		}
+		icon = "BAY_tenements"
+		cost = 5
+		relative_position_id = BAY_georgism
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = BAY_idea_tenements
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_abolish_rent
+		prerequisite = {
+			focus = BAY_tenements
+		}
+		icon = "BAY_gfx_free_money"
+		cost = 5
+		relative_position_id = BAY_tenements
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = BAY_idea_abolish_rent
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_ubi
+		prerequisite = {
+			focus = BAY_abolish_rent
+		}
+		icon = "BAY_ubi"
+		cost = 5
+		relative_position_id = BAY_abolish_rent
+		x = 0
+		y = 1
+		completion_reward = {
+			add_ideas = BAY_ubi
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_rehabilitate
+		prerequisite = {
+			focus = BAY_ubi
+			focus = BAY_standardized_homes
+		}
+		icon = "BAY_rehabilitate"
+		cost = 10
+		relative_position_id = BAY_ubi
+		x = -1
+		y = 1
+		completion_reward = {
+			add_ideas = BAY_rehabilitated
+			add_stability = 0.05
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	################
+	####STAHLISM####
+	################
+	focus = {
+		id = BAY_stalism
+		prerequisite = {
+			focus = BAY_revolution_of_love
+		}
+		icon = "BAY_fist_wrench"
+		cost = 5
+		relative_position_id = BAY_love_prevails
+		mutually_exclusive = {
+			focus = BAY_love_prevails
+			focus = BAY_monarchism
+		}
+		x = 4
+		y = 0
+		completion_reward = {
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			#demote = BAY_Ernst_Toller
+			#promote = BAY_Eugen_Levine
+			add_country_leader_role = {
+				character = BAY_Eugen_Levine
+				promote_leader = yes
+				country_leader = {
+				ideology = stalinism
+				expire = “1965.1.1”
+				traits = { dictator }
+				}
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_secure_power
+		prerequisite = {
+			focus = BAY_stalism
+		}
+		icon = "BAY_red_star"
+		cost = 5
+		relative_position_id = BAY_stalism
+		x = -1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+			add_stability = 0.1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_purge_social_fascists
+		prerequisite = {
+			focus = BAY_stalism
+		}
+		icon = "BAY_comedy_of_errors"
+		cost = 5
+		relative_position_id = BAY_stalism
+		x = 1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+			add_stability = -0.2
+			add_political_power = 75
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_stahlmann
+		prerequisite = {
+			focus = BAY_secure_power
+		}
+		prerequisite = {
+			focus = BAY_purge_social_fascists
+		}
+		icon = "BAY_steel" 
+		cost = 20
+		relative_position_id = BAY_secure_power
+		x = 1
+		y = 1
+		completion_reward = {
+			add_stability = 0.3
+			add_political_power = 150
+			add_trait = {
+				character = BAY_Eugen_Levine
+				slot = country_leader
+				trait = BAY_man_of_steel
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_seize_private_property
+		prerequisite = {
+			focus = BAY_stahlmann
+		}
+		icon = "BAY_property_1"
+		cost = 5
+		relative_position_id = BAY_stahlmann
+		x = 1
+		y = 1
+		completion_reward = {
+			add_stability = -0.1
+			add_ideas = {
+				seized_property_1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_seize_personal_property
+		prerequisite = {
+			focus = BAY_seize_private_property
+		}
+		icon = "BAY_property_2"
+		cost = 5
+		relative_position_id = BAY_seize_private_property
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = -0.1
+			swap_ideas = {
+				remove_idea = seized_property_1
+				add_idea = seized_property_2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_the_commons
+		prerequisite = {
+			focus = BAY_seize_personal_property
+		}
+		icon = "BAY_fist"
+		cost = 5
+		relative_position_id = BAY_seize_personal_property
+		x = 0
+		y = 1
+		completion_reward = {
+			add_stability = 0.2
+			swap_ideas = {
+				remove_idea = seized_property_2
+				add_idea = BAY_idea_the_commons
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_enforce_saxon_revolution
+		prerequisite = {
+			focus = BAY_stahlmann
+			focus = BAY_georgism
+			focus = BAY_socialism
+		}
+		bypass = {
+			BAY = {
+				NOT = {
+					is_neighbor_of = SAX
+				}
+			}
+		}
+		will_lead_to_war_with = SAX
+		icon = "BAY_war_1"
+		cost = 5
+		relative_position_id = BAY_stahlmann
+		x = -1
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SAX
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_enforce_rhenish_revolution
+		prerequisite = {
+			focus = BAY_enforce_saxon_revolution
+		}
+		bypass = {
+			BAY = {
+				NOT = {
+					is_neighbor_of = RHI
+				}
+			}
+		}
+		will_lead_to_war_with = RHI
+		icon = "BAY_war_2"
+		cost = 5
+		relative_position_id = BAY_enforce_saxon_revolution
+		x = 0
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = RHI
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_austrian_revolution
+		prerequisite = {
+			focus = BAY_enforce_rhenish_revolution
+		}
+		bypass = {
+			BAY = {
+				NOT = {
+					is_neighbor_of = AUS
+				}
+			}
+		}
+		will_lead_to_war_with = AUS
+		icon = "BAY_war_3"
+		cost = 5
+		relative_position_id = BAY_enforce_rhenish_revolution
+		x = 0
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = AUS
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_swiss_revolution
+		prerequisite = {
+			focus = BAY_austrian_revolution
+		}
+		bypass = {
+			BAY = {
+				NOT = {
+					is_neighbor_of = SWI
+				}
+			}
+		}
+		will_lead_to_war_with = SWI
+		icon = "BAY_war_1"
+		cost = 5
+		relative_position_id = BAY_austrian_revolution
+		x = -1
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SWI
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_south_germany_ussr
+		prerequisite = {
+			focus = BAY_austrian_revolution
+		}
+		bypass = {
+			BAY = {
+				NOT = {
+					is_neighbor_of = SWI
+				}
+			}
+		}
+		will_lead_to_war_with = SWI
+		icon = "BAY_south_germany_c"
+		cost = 5
+		relative_position_id = BAY_austrian_revolution
+		x = 1
+		y = 1
+		completion_reward = {
+			set_cosmetic_tag = SouthGermany
+			IF = {
+				limit = { 
+					OR = {
+						BAY = {
+							owns_state = 42
+						}
+						BAY = {
+							owns_state = 51
+						}
+						RHI = {
+							is_puppet_of = BAY
+						}
+					}
+				}
+				add_state_core = 42
+				add_state_core = 51
+			}
+			IF = {
+				limit = {
+					OR = {
+						BAY = {
+							owns_state = 60
+						}
+						BAY = {
+							owns_state = 65
+						}
+						SAX = {
+							is_puppet_of = BAY
+						}
+					}
+				}
+				add_state_core = 60
+				add_state_core = 65
+			}
+			IF = {
+				limit = {
+					SAX = {
+						is_puppet_of = BAY
+					}
+				}
+				BAY = {
+					annex_country = {
+						target = SAX
+						transfer_troops = yes
+					}
+				}
+			}
+			IF = {
+				limit = {
+					RHI = {
+						is_puppet_of = BAY
+					}
+				}
+				BAY = {
+					annex_country = {
+						target = RHI
+						transfer_troops = yes
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	############
+	#MONARCHISM#
+	############
+	focus = {
+		id = BAY_monarchism
+		prerequisite = {
+			focus = BAY_revolution_of_love
+		}
+		icon = "BAY_love_prevails"
+		cost = 5
+		mutually_exclusive = {
+			focus = BAY_stalism
+			focus = BAY_love_prevails
+		}
+		relative_position_id = BAY_stalism
+		x = 4
+		y = 0
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.3
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.6
+			}
+			add_stability = -0.3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_purge_fascists
+		prerequisite = {
+			focus = BAY_monarchism
+		}
+		icon = "BAY_fist"
+		cost = 5
+		relative_position_id = BAY_monarchism
+		x = -1
+		y = 1
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.20
+			}
+			#add_stability = 0.1
+			add_political_power = -75
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_constitutional_monarchy
+		prerequisite = {
+			focus = BAY_monarchism
+		}
+		icon = "BAY_parliament"
+		cost = 5
+		relative_position_id = BAY_monarchism
+		x = 1
+		y = 1
+		completion_reward = {
+			add_trait = {
+				character = BAY_Rupprecht_Wittelsbach
+				slot = country_leader
+				trait = constitutional_monarch
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_ally_habsburg_king
+		prerequisite = {
+			focus = BAY_constitutional_monarchy
+			focus = BAY_purge_fascists
+		}
+		icon = "BAY_habsburg"
+		cost = 5
+		relative_position_id = BAY_constitutional_monarchy
+		x = -2
+		y = 1
+		completion_reward = {
+			create_faction = "South German Confederation"
+			add_to_faction = BAY
+			add_to_faction = CRO
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_banish_austrian_fascism
+		prerequisite = {
+			focus = BAY_ally_habsburg_king
+		}
+		icon = "BAY_banish_fascism_1"
+		cost = 5
+		relative_position_id = BAY_ally_habsburg_king
+		x = 0
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = AUS
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_restore_order_saxony
+		prerequisite = {
+			focus = BAY_ally_habsburg_king
+		}
+		icon = "BAY_order_saxony"
+		cost = 5
+		relative_position_id = BAY_ally_habsburg_king
+		x = 2
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SAX
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_restore_bohemian_austria
+		prerequisite = {
+			focus = BAY_banish_austrian_fascism
+		}
+		icon = "BAY_bohemian_austria"
+		cost = 5
+		relative_position_id = BAY_banish_austrian_fascism
+		x = 0
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = CZE
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_remove_the_reich
+		prerequisite = {
+			focus = BAY_restore_bohemian_austria
+		}
+		icon = "BAY_banish_fascism_2"
+		cost = 5
+		relative_position_id = BAY_restore_bohemian_austria
+		x = 0
+		y = 1
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = GER
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = BAY_unite_the_kingdoms
+		prerequisite = {
+			focus = BAY_restore_bohemian_austria
+		}
+		icon = "BAY_unite_kingdoms"
+		cost = 5
+		relative_position_id = BAY_restore_bohemian_austria
+		x = 2
+		y = 1
+		completion_reward = {
+			set_cosmetic_tag = SouthGermany
+			annex_country = {
+						target = AUS
+						transfer_troops = yes
+					}
+			annex_country = {
+						target = CRO
+						transfer_troops = yes
+					}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

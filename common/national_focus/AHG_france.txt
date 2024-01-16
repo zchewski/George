@@ -1,0 +1,1052 @@
+﻿focus_tree = {
+	id = french_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = FRA
+		}
+	}
+	continuous_focus_position = { x = 0 y = 1110 }
+	initial_show_position = {
+		x = 0
+	}
+
+	
+	default = no
+	focus = {
+		id = FRA_begin_colonial_reforms
+		icon = FRA_gfx_begin_colonial_reforms
+		x = 2
+		y = 0
+		offset = {
+			x = 0
+			y = 0
+		}
+		prerequisite = {}
+		mutually_exclusive = { }
+		cost = 5
+			ai_will_do = {
+			factor = 1
+		}
+		available = {
+			
+		}
+		
+		bypass = {
+
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = { FOCUS_FILTER_POLITICS }
+		completion_reward = {
+			add_political_power = 75
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = FRA_integrate_algeria
+		icon = FRA_gfx_integrate_algeria
+		x = 0
+		y = 1
+		relative_position_id = FRA_begin_colonial_reforms
+		prerequisite = {
+			focus = FRA_begin_colonial_reforms
+		}
+		mutually_exclusive = { }
+		cost = 10
+			ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			NOT = {
+				FRA = {
+					owns_state = 459
+				}
+			}
+		}
+		completion_reward = {
+			FRA = {
+				add_state_core = 459
+				add_state_core = 460
+				add_state_core = 513
+				add_state_core = 514
+			}
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = FRA_invest_in_komo_kongo
+		icon = "FRA_gfx_invest_in_komo_kongo"
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = FRA_integrate_algeria
+		prerequisite = {
+			focus = FRA_integrate_algeria
+		}
+		completion_reward = {
+			539 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			772 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_invest_in_central_africa
+		icon = "FRA_gfx_invest_in_central_africa"
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = FRA_integrate_algeria
+		prerequisite = {
+			focus = FRA_integrate_algeria
+		}
+		completion_reward = {
+			660 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			774 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_invest_in_niger
+		icon = "FRA_gfx_invest_in_niger"
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = FRA_integrate_algeria
+		prerequisite = {
+			focus = FRA_integrate_algeria
+		}
+		completion_reward = {
+			515 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			781 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_integrate_komo-kongo
+		icon = FRA_gfx_integrate_komo-kongo
+		x = 0
+		y = 1
+		relative_position_id = FRA_invest_in_komo_kongo
+		prerequisite = {
+			focus = FRA_invest_in_komo_kongo
+		}
+		mutually_exclusive = { }
+		cost = 10
+			ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			NOT = {
+				FRA = {
+					owns_state = 539
+					owns_state = 772
+				}
+			}
+		}
+		completion_reward = {
+			FRA = {
+					add_state_core = 539
+					add_state_core = 772
+			}
+			add_stability = 0.03
+		}
+	}
+	focus = {
+		id = FRA_integrate_central_africa
+		icon = FRA_gfx_integrate_central_africa
+		x = 0
+		y = 1
+		relative_position_id = FRA_invest_in_central_africa
+		prerequisite = {
+			focus = FRA_invest_in_central_africa
+		}
+		mutually_exclusive = { }
+		cost = 10
+			ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			NOT = {
+				FRA = {
+					owns_state = 660
+					owns_state = 774
+				}
+			}
+		}
+		completion_reward = {
+			FRA = {
+				add_state_core = 660
+				add_state_core = 774
+				add_state_core = 775
+			}
+			add_stability = 0.03
+		}
+	}
+	focus = {
+		id = FRA_integrate_niger
+		icon = FRA_gfx_integrate_niger
+		x = 0
+		y = 1
+		relative_position_id = FRA_invest_in_niger
+		prerequisite = {
+			focus = FRA_invest_in_niger
+		}
+		mutually_exclusive = { }
+		cost = 10
+			ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			NOT = {
+				FRA = {
+					owns_state = 515
+					owns_state = 781
+				}
+			}
+		}
+		completion_reward = {
+			FRA = {
+					add_state_core = 781
+					add_state_core = 515
+			}
+			add_stability = 0.03
+		}
+	}
+	focus = {
+		id = FRA_bring_order_to_french_africa
+		icon = "FRA_gfx_bring_order_to_french_africa"
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = FRA_integrate_central_africa
+		prerequisite = {
+			focus = FRA_integrate_komo-kongo
+			focus = FRA_integrate_central_africa
+			focus = FRA_integrate_niger
+		}
+		completion_reward = {
+			add_political_power = 100
+			swap_ideas = {
+				remove_idea = FRA_collapse_of_the_third_republic
+				add_idea = FRA_collapse_of_the_third_republic_2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_invest_in_mashriq
+		icon = "FRA_gfx_invest_in_mashriq"
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = FRA_bring_order_to_french_africa
+		prerequisite = {
+			focus = FRA_bring_order_to_french_africa
+		}
+		prerequisite = {
+			focus = FRA_encourage_immigration
+		}
+		completion_reward = {
+			553 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			268 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_invest_in_madagascar
+		icon = "FRA_gfx_invest_in_madagascar"
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = FRA_bring_order_to_french_africa
+		prerequisite = {
+			focus = FRA_bring_order_to_french_africa
+		}
+		prerequisite = {
+			focus = FRA_encourage_immigration
+		}
+		completion_reward = {
+			543 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			706 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			708 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_invest_in_america
+		icon = "FRA_gfx_invest_in_america"
+		cost = 5
+		x = 4
+		y = 1
+		relative_position_id = FRA_bring_order_to_french_africa
+		prerequisite = {
+			focus = FRA_bring_order_to_french_africa
+		}
+		prerequisite = {
+			focus = FRA_encourage_immigration
+		}
+		completion_reward = {
+			694 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			310 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_integrate_mashriq
+		icon = FRA_gfx_integrate_mashriq
+		x = 0
+		y = 1
+		relative_position_id = FRA_invest_in_mashriq
+		prerequisite = {
+			focus = FRA_invest_in_mashriq
+		}
+		mutually_exclusive = { }
+		cost = 5
+			ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			NOT = {
+				FRA = {
+					owns_state = 553
+					owns_state = 268
+				}
+			}
+		}
+		completion_reward = {
+			FRA = {
+					add_state_core = 553
+					add_state_core = 268
+			}
+			add_stability = 0.03
+		}
+	}
+	focus = {
+		id = FRA_integrate_madagascar
+		icon = FRA_gfx_integrate_madagascar
+		x = 0
+		y = 1
+		relative_position_id = FRA_invest_in_madagascar
+		prerequisite = {
+			focus = FRA_invest_in_madagascar
+		}
+		mutually_exclusive = { }
+		cost = 5
+			ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			NOT = {
+				FRA = {
+					owns_state = 543
+					owns_state = 708
+					owns_state = 706
+				}
+			}
+		}
+		completion_reward = {
+			FRA = {
+					add_state_core = 543
+					add_state_core = 708
+					add_state_core = 706
+			}
+			add_stability = 0.04
+		}
+	}
+	focus = {
+		id = FRA_integrate_america
+		icon = FRA_gfx_integrate_america
+		x = 0
+		y = 1
+		relative_position_id = FRA_invest_in_america
+		prerequisite = {
+			focus = FRA_invest_in_america
+		}
+		mutually_exclusive = { }
+		cost = 5
+			ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			NOT = {
+				FRA = {
+					owns_state = 694
+					owns_state = 310
+				}
+			}
+		}
+		completion_reward = {
+			FRA = {
+					add_state_core = 694
+					add_state_core = 310
+					add_state_core = 730
+			}
+			add_stability = 0.03
+		}
+	}
+	focus = {
+		id = FRA_create_french_community
+		icon = "FRA_gfx_create_french_community"
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = FRA_integrate_madagascar
+		prerequisite = {
+			focus = FRA_integrate_america
+			focus = FRA_integrate_madagascar
+			focus = FRA_integrate_mashriq
+		}
+		completion_reward = {
+			add_political_power = 100
+			swap_ideas = {
+				remove_idea = FRA_collapse_of_the_third_republic_2
+				add_idea = french_community
+			}
+			set_cosmetic_tag = FRA_community
+			add_state_core = 635
+			add_state_core = 734
+			add_state_core = 641
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_encourage_immigration
+		icon = "FRA_gfx_encourage_immigration"
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = FRA_integrate_central_africa
+		prerequisite = {
+			focus = FRA_integrate_komo-kongo
+			focus = FRA_integrate_central_africa
+			focus = FRA_integrate_niger
+		}
+		completion_reward = {
+			remove_ideas = FRA_full_employment
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	###############
+	####Fix Gov####
+	###############
+	focus = {
+		id = FRA_crisis_of_the_third_republic
+		icon = "FRA_gfx_crisis_of_the_third_republic"
+		cost = 10
+		x = 10
+		y = 0
+		relative_position_id = FRA_begin_colonial_reforms
+		prerequisite = {
+			#
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_marshall_petain
+		icon = "FRA_gfx_petain"
+		cost = 5
+		x = -4
+		y = 1
+		relative_position_id = FRA_crisis_of_the_third_republic
+		prerequisite = {
+			focus = FRA_crisis_of_the_third_republic
+		}
+		mutually_exclusive = { focus = FRA_marshall_gamelin }
+		completion_reward = {
+			add_country_leader_role = {
+				character = FRA_philippe_petain
+				country_leader = {
+					traits = {
+						national_integralist
+						nationalist_symbol
+					}
+					ideology = renterism
+				}
+				promote_leader = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_marshall_gamelin
+		icon = "FRA_gfx_gamelin"
+		cost = 5
+		x = 4
+		y = 1
+		relative_position_id = FRA_crisis_of_the_third_republic
+		prerequisite = {
+			focus = FRA_crisis_of_the_third_republic
+		}
+		mutually_exclusive = { focus = FRA_marshall_petain }
+		completion_reward = {
+			add_country_leader_role = {
+				character = FRA_maurice_gamelin
+				country_leader = {
+					traits = {
+						#stout_defender
+						indomitable_perseverance
+						nationalist_symbol
+					}
+					ideology = paineism
+				}
+				promote_leader = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_provisional_government
+		icon = "FRA_gfx_provgov"
+		cost = 5
+		x = 0
+		y = 2
+		relative_position_id = FRA_crisis_of_the_third_republic
+		prerequisite = {
+			focus = FRA_marshall_gamelin
+			focus = FRA_marshall_petain
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = {
+				FRA_idea_law_on_constitution
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_limited_land_reform
+		icon = "FRA_gfx_llr"
+		cost = 5
+		x = 1
+		y = 2
+		relative_position_id = FRA_marshall_petain
+		prerequisite = {
+			focus = FRA_marshall_petain
+		}
+		prerequisite = {
+			focus = FRA_provisional_government
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			add_stability = 0.03
+			add_ideas = {
+				FRA_land_reform_p
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_reorganize_departments
+		icon = "FRA_gfx_reorg"
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = FRA_limited_land_reform
+		prerequisite = {
+			focus = FRA_limited_land_reform
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			add_stability = 0.1
+			every_core_state = {
+				limit = {
+					is_owned_and_controlled_by = FRA
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_revolution_nationale
+		icon = "FRA_gfx_natrev"
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = FRA_reorganize_departments
+		prerequisite = {
+			focus = FRA_reorganize_departments
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.2
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.2
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.2
+			}
+			remove_ideas = { FRA_disjointed_government }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_placate_bougies
+		icon = "FRA_gfx_placate_bougies"
+		cost = 5
+		x = -2
+		y = 1
+		relative_position_id = FRA_limited_land_reform
+		prerequisite = {
+			focus = FRA_limited_land_reform
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			add_ideas = { FRA_idea_business_interests_promoted_1 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_promote_business_interests
+		icon = "FRA_gfx_pbi"
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = FRA_placate_bougies
+		prerequisite = {
+			focus = FRA_placate_bougies
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FRA_idea_business_interests_promoted_1
+				add_idea = FRA_idea_business_interests_promoted_2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_declare_french_state
+		icon = "FRA_gfx_dfs"
+		cost = 10
+		x = -2
+		y = 1
+		relative_position_id = FRA_revolution_nationale
+		prerequisite = {
+			focus = FRA_revolution_nationale
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_country_leader_role = {
+				character = FRA_philippe_petain
+				country_leader = {
+					traits = {
+						national_integralist
+						nationalist_symbol
+					}
+					ideology = fascism_ideology
+				}
+				promote_leader = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_we_need_a_king
+		icon = "FRA_gfx_wnak"
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = FRA_revolution_nationale
+		prerequisite = {
+			focus = FRA_revolution_nationale
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_country_leader_role = {
+				character = FRA_philippe_petain
+				country_leader = {
+					traits = {
+						national_integralist
+						nationalist_symbol
+					}
+					ideology = despotism
+				}
+				promote_leader = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_georgist_absolutism
+		icon = "FRA_gfx_absolutism"
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = FRA_revolution_nationale
+		prerequisite = {
+			focus = FRA_revolution_nationale
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = georgism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = georgism
+				popularity = 0.2
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_hamiltonian_authority
+		icon = "FRA_gfx_hamilton"
+		cost = 5
+		x = 0
+		y = 2
+		relative_position_id = FRA_marshall_gamelin
+		prerequisite = {
+			focus = FRA_marshall_gamelin
+		}
+		prerequisite = {
+			focus = FRA_provisional_government
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			add_ideas = {
+				FRA_idea_provisional_govt_1
+			}
+			add_stability = 0.1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_manage_the_media
+		icon = "FRA_gfx_media"
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = FRA_hamiltonian_authority
+		prerequisite = {
+			focus = FRA_hamiltonian_authority
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FRA_idea_provisional_govt_1
+				add_idea = FRA_idea_provisional_govt_2
+			}
+			add_stability = 0.1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_commitment_to_democracy
+		icon = "FRA_gfx_ctd"
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = FRA_manage_the_media
+		prerequisite = {
+			focus = FRA_manage_the_media
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FRA_idea_provisional_govt_2
+				add_idea = FRA_idea_provisional_govt_3
+			}
+			add_stability = 0.1
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			} 
+			remove_ideas = { FRA_disjointed_government }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_address_the_depression
+		icon = "FRA_gfx_depression"
+		cost = 5
+		x = 2
+		y = 1
+		relative_position_id = FRA_hamiltonian_authority
+		prerequisite = {
+			focus = FRA_hamiltonian_authority
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			add_ideas = {
+				FRA_idea_economic_recovery_1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_law_on_agrarian_justice
+		icon = "FRA_gfx_agjust"
+		cost = 5
+		x = 0
+		y = 1
+		relative_position_id = FRA_address_the_depression
+		prerequisite = {
+			focus = FRA_address_the_depression
+		}
+		mutually_exclusive = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FRA_idea_economic_recovery_1
+				add_idea = FRA_idea_economic_recovery_2
+			}
+			#remove_ideas = { FRA_disjointed_government }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_georgist_democracy
+		icon = "FRA_gfx_democratic"
+		cost = 10
+		x = -2
+		y = 1
+		relative_position_id = FRA_commitment_to_democracy
+		prerequisite = {
+			focus = FRA_commitment_to_democracy
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = georgism
+				popularity = 0.2
+			}
+		}
+		add_stability = 0.2
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_free_and_fair
+		icon = "FRA_gfx_fnf"
+		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = FRA_commitment_to_democracy
+		prerequisite = {
+			focus = FRA_commitment_to_democracy
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			add_country_leader_role = {
+				character = FRA_maurice_gamelin
+				country_leader = {
+					traits = {
+						staunch_constitutionalist
+						nationalist_symbol
+					}
+					ideology = socialism
+				}
+				promote_leader = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = {
+		id = FRA_workers_republic
+		icon = "FRA_gfx_gommies"
+		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = FRA_commitment_to_democracy
+		prerequisite = {
+			focus = FRA_commitment_to_democracy
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = yes
+			}
+			add_country_leader_role = {
+				character = FRA_maurice_gamelin
+				country_leader = {
+					traits = {
+						triumphant_revolutionary
+						nationalist_symbol
+					}
+					ideology = democratic_socialism
+				}
+				promote_leader = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

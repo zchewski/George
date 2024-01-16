@@ -1,0 +1,177 @@
+bookmarks = {
+	bookmark = {
+		name = "GATHERING_STORM_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 1936.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "BAY"
+		default = yes
+		
+		"FRA"={
+			history = "FRA_GATHERING_STORM_DESC"
+			ideology = georgism
+			ideas = {
+				FRA_collapse_of_the_third_republic
+				FRA_disjointed_government
+				FRA_protected_by_the_maginot_line
+			}
+			focuses = {
+				FRA_integrate_algeria
+				FRA_georgist_democracy
+				FRA_create_french_community
+			}
+		}
+		"USA"={
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				home_of_the_free
+				great_depression
+				undisturbed_isolation
+			}
+			focuses = {
+				#
+				#
+				#
+			}
+		}
+		"ENG"={
+			history = "ENG_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				stiff_upper_lip
+				ENG_the_war_to_end_all_wars
+				george_v
+			}
+			focuses = {
+				#
+				#
+				#
+			}
+		}
+		"BAY"={
+			history = "BAY_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				anti_german_military
+				general_staff
+			}
+			focuses = {
+				BAY_revolution_of_love
+				BAY_rehabilitate
+				BAY_coffee_school
+			}
+		}
+		"ITA"={
+			history = "ITA_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				vittoria_mutilata
+				victor_emmanuel
+				risorgimento
+			}	
+			focuses = {
+				#
+				#
+				#
+			}		
+		}
+		"JAP"={
+			history = "JAP_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				state_shintoism
+				JAP_zaibatsus
+				JAP_militarism
+			}	
+			focuses = {
+				#
+				#
+				#
+			}			
+		}
+		"SOV"={
+			history = "SOV_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				#
+				#
+				#
+			}
+			focuses = {
+				#
+				#
+				#
+			}	
+		}
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
+
+		# minors from DLC ####
+		#
+		"SER"={
+			minor = yes
+			history = "SER_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				anti_german_military
+				YUG_idea_macedonian_opposition
+				YUG_idea_serbian_general_staff
+			}
+			focuses = {
+				SER_balkan_pact
+				SER_split_bosnia
+				SER_declare_south_slavic_unity
+			}
+		}
+		"GER"={
+			minor = yes
+			history = "GER_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				sour_loser
+				general_staff
+			}
+			focuses = {
+				GER_amenable_emperor
+				GER_glory_of_prussia
+				GER_foster_litvin
+			}
+		}	
+		"DEN"={
+			minor = yes
+			history = "DEN_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				DEN_i_nationalisms
+				DEN_i_unstable_democracy
+				DEN_i_christian_x
+			}
+			focuses = {
+				#
+				#
+				#
+			}
+		}		
+		"ZIM"={
+			minor = yes
+			history = "ZIM_GATHERING_STORM_DESC"
+			ideology = georgism
+			ideas = {
+				#
+				#
+			}
+			focuses = {
+				#
+				#
+				#
+			}
+		}		
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

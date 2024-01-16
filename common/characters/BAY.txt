@@ -1,0 +1,132 @@
+characters = {
+	BAY_Gustav_Landauer = {
+		name = "Gustav Landauer"
+		advisor={
+			slot = political_advisor
+			idea_token = BAY_Gustav_Landauer
+			allowed  = {
+					original_tag  = BAY
+				}
+			traits  = {
+				compassionate_gentleman
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+	}
+	BAY_Silvio_Gesell = {
+		name = "Silvio Gesell"
+		advisor={
+			slot = political_advisor
+			idea_token = BAY_Silvio_Gesell
+			allowed  = {
+					original_tag  = BAY
+				}
+			traits  = {
+				captain_of_industry 
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+	}
+	BAY_Eric_Muhsam = {
+		name = "Erich Mühsam"
+		advisor={
+			slot = political_advisor
+			idea_token = BAY_Eric_Muhsam
+			allowed  = {
+					original_tag  = BAY
+				}
+			traits  = {
+				popular_figurehead 
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+	}
+	BAY_Albert_Einstein = {
+		name = "Albert Einstein"
+		advisor={
+			slot = theorist
+			idea_token = BAY_Einstein
+			allowed  = {
+					original_tag  = BAY
+				}
+			research_bonus = {
+				nuclear = 0.15
+			}
+		}
+	}
+	BAY_Max_Hirschberg = {
+		name = "Max Hirschberg"
+		advisor={
+			slot = political_advisor
+			idea_token = BAY_Max_Hirschberg
+			allowed  = {
+					original_tag  = BAY
+				}
+			traits  = {
+				silent_workhorse 
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+	}
+	BAY_Rupprecht_Wittelsbach = {
+		name = "Rupprecht Wittelsbach"
+		country_leader = {
+			ideology = moderatism
+			expire = "1955.8.2"
+			id = -1
+			traits = {
+				staunch_constitutionalist
+			}
+		}
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/GER/Rupprecht_Bayern.png"
+			}
+		}
+	}
+	BAY_Eugen_Levine = {
+		name = "Eugen Leviné"
+		advisor={
+			slot = army_chief
+			idea_token = BAY_Eugen_Levine
+			allowed  = {
+					original_tag  = BAY
+				}
+			traits  = {
+				army_infantry_2
+			}
+		}
+		country_leader = {
+			ideology = stalinism
+			expire = "1965.1.1"
+			id=-1
+			traits={
+				dictator
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_generic_army_europe_2"
+			}
+			civilian = {
+				large = "gfx/leaders/GER/Eugen_Levine.png"
+			}
+		}
+	}
+}

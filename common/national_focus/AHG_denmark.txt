@@ -1,0 +1,440 @@
+focus_tree = {
+	id = danish_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = DEN
+		}
+	}
+	continuous_focus_position = { x = 0 y = 1110 }
+	initial_show_position = {
+		x = 0
+	}
+
+	default = no
+	focus = {
+		id = DEN_state_of_the_realm
+		icon = DEN_gfx_state_of_the_realm
+		x = 6
+		y = 0
+	#	relative_position_id = {}
+	#	prerequisite = {}
+	#	available = {}
+		cost = 10
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = DEN_devolution
+		icon = DEN_gfx_devolution
+		x = -3
+		y = 1
+		relative_position_id = DEN_state_of_the_realm 
+		prerequisite = { focus = DEN_state_of_the_realm}
+		mutually_exclusive = { focus = DEN_evolution }
+		available = {}
+		cost = 10
+		completion_reward = {
+			release_puppet = ICE
+			ICE = {
+				save_event_target_as = released_nation_target
+				event_target:released_nation_target = {
+					division_template = {
+						name = "Icelandic Defence Force"
+						priority = 1
+						division_names_group = DEN_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Islenska Varnarliðið 1\" division_template = \"Icelandic Defence Force\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Islenska Varnarliðið 2\" division_template = \"Icelandic Defence Force\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = DEN_faroese_self_gov
+		icon = DEN_gfx_faroese_self_gov
+		x = 1
+		y = 1
+		relative_position_id = DEN_devolution 
+		prerequisite = { focus = DEN_devolution}
+		available = {}
+		cost = 5
+		completion_reward = {
+			release_puppet = FAR
+			FAR = {
+				save_event_target_as = released_nation_target
+				event_target:released_nation_target = {
+					division_template = {
+						name = "Faroese Defence Force"
+						priority = 1
+						division_names_group = DEN_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Færeyska Varnarliðið\" division_template = \"Faroese Defence Force\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = DEN_greenlandic_self_gov
+		icon = DEN_gfx_greenlandic_self_gov
+		x = -1
+		y = 1
+		relative_position_id = DEN_devolution 
+		prerequisite = { focus = DEN_devolution}
+		available = {}
+		cost = 5
+		completion_reward = {
+			release_puppet = GRN
+			GRN = {
+				save_event_target_as = released_nation_target
+				event_target:released_nation_target = {
+					division_template = {
+						name = "Greenlandic Defence Force"
+						priority = 1
+						division_names_group = DEN_INF_01
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+				
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
+				
+							infantry = { x = 2 y = 0 }
+							infantry = { x = 2 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { PREV = { has_full_control_of_state = PREV } }
+						create_unit = {
+							division = "name = \"Grønlands Forsvar\" division_template = \"Greenlandic Defence Force\" start_experience_factor = 0.9" 
+							owner = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = DEN_evolution
+		icon = DEN_gfx_evolution
+		x = 3
+		y = 1
+		relative_position_id =  DEN_state_of_the_realm 
+		prerequisite = { focus = DEN_state_of_the_realm }
+		mutually_exclusive = { focus = DEN_devolution }
+		available = {}
+		cost = 10
+		completion_reward = {
+			add_manpower = 16500
+		}
+	}
+	focus = {
+		id = DEN_address_concerns
+		icon = DEN_gfx_address_concerns
+		x = 1
+		y = 1
+		relative_position_id =  DEN_evolution 
+		prerequisite = { focus = DEN_evolution }
+		available = {}
+		cost = 5
+		completion_reward = {
+			add_manpower = 36500
+		}
+	}
+	focus = {
+		id = DEN_representation
+		icon = DEN_gfx_address_concerns
+		x = -1
+		y = 1
+		relative_position_id =  DEN_evolution 
+		prerequisite = { focus = DEN_evolution }
+		available = {}
+		cost = 5
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = DEN_liberty
+		icon = DEN_gfx_liberty
+		x = -1
+		y = 1
+		relative_position_id = DEN_faroese_self_gov 
+		prerequisite = { focus = DEN_greenlandic_self_gov }
+		prerequisite = { focus = DEN_faroese_self_gov }
+		available = {}
+		cost = 10
+		completion_reward = {
+			set_autonomy = {
+				target = ICE
+				autonomy_state = autonomy_free
+				end_wars = no
+				end_civil_wars = no
+			}
+			set_autonomy = {
+				target = FAR
+				autonomy_state = autonomy_free
+				end_wars = no
+				end_civil_wars = no
+			}
+			set_autonomy = {
+				target = GRN
+				autonomy_state = autonomy_free
+				end_wars = no
+				end_civil_wars = no
+			}
+			add_manpower = 75603
+			remove_ideas = DEN_i_nationalisms
+		}
+	}
+	focus = {
+		id = DEN_guarantee_schleswig
+		icon = DEN_gfx_guarantee_schleswig
+		x = 0
+		y = 1
+		relative_position_id =  DEN_liberty
+		prerequisite = { focus = DEN_liberty }
+		available = {}
+		cost = 5
+		completion_reward = {
+			give_guarantee = SHL
+		}
+	}
+	focus = {
+		id = DEN_unity_of_the_realm
+		icon = DEN_gfx_unity_of_the_realm
+		x = 2
+		y = 1
+		relative_position_id =  DEN_faroese_self_gov 
+		prerequisite = { 
+			focus = DEN_greenlandic_self_gov
+			focus = DEN_representation 
+		}
+		prerequisite = { 
+			focus = DEN_faroese_self_gov_self_gov
+			focus = DEN_address_concerns
+		}
+		available = {}
+		cost = 10
+		completion_reward = {
+			add_stability = 0.05
+			create_faction = "Danish Realm"
+			add_to_faction = DEN
+			remove_ideas = DEN_i_nationalisms
+		}
+	}
+	focus = {
+		id = DEN_offer_schleswig_protection
+		icon = DEN_gfx_offer_schleswig_protection
+		x = 0
+		y = 1
+		relative_position_id =  DEN_unity_of_the_realm
+		prerequisite = { focus = DEN_unity_of_the_realm }
+		available = {}
+		cost = 5
+		completion_reward = {
+			SHL = {
+				country_event = {
+					id = DEN.1
+					hours = 6
+				}
+			}
+		}
+	}
+	focus = {
+		id = DEN_unitary_state
+		icon = DEN_gfx_unitary_state
+		x = -1
+		y = 1
+		relative_position_id =  DEN_address_concerns
+		prerequisite = { focus = DEN_address_concerns }
+		prerequisite = { focus = DEN_representation }
+		available = {}
+		cost = 5
+		completion_reward = {
+			add_state_core = 100
+			add_state_core = 101
+			add_state_core = 337
+			remove_ideas = DEN_i_nationalisms
+		}
+	}
+	focus = {
+		id = DEN_annex_schleswig
+		icon = DEN_gfx_annex_schleswig
+		x = 0
+		y = 1
+		relative_position_id =  DEN_unitary_state
+		prerequisite = { focus = DEN_unitary_state }
+		available = {}
+		cost = 5
+		completion_reward = {
+			SHL = {
+				country_event = {
+					id = DEN.4
+					hours = 6
+				}
+			}
+		}
+	}
+	###############
+	##SOUTH FORTS##
+	###############
+	focus = {
+		id = DEN_jutland_forts
+		icon = DEN_gfx_jutland_forts
+		x = 0
+		y = 0
+		#relative_position_id =  
+		#prerequisite = { focus =  }
+		available = {}
+		cost = 5
+		completion_reward = {
+			99 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = DEN_jutland_forts_2
+		icon = DEN_gfx_jutland_forts
+		x = 0
+		y = 1
+		relative_position_id = DEN_jutland_forts
+		prerequisite = { focus = DEN_jutland_forts }
+		available = {}
+		cost = 5
+		completion_reward = {
+			99 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = DEN_jutland_forts_3
+		icon = DEN_gfx_jutland_forts
+		x = 0
+		y = 1
+		relative_position_id = DEN_jutland_forts_2
+		prerequisite = { focus = DEN_jutland_forts_2 }
+		available = {}
+		cost = 5
+		completion_reward = {
+			99 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = DEN_schleswig_forts
+		icon = DEN_gfx_schleswig_forts
+		x = 0
+		y = 1
+		relative_position_id = DEN_jutland_forts_3
+		prerequisite = { focus = DEN_jutland_forts_3 }
+		available = {
+			OR = {
+				58 = { is_owned_and_controlled_by = DEN }
+				SHL = {
+					owns_state = 58
+					is_in_faction_with = DEN
+				}
+			}
+		}
+		cost = 10
+		completion_reward = {
+			58 = {
+				add_building_construction = {
+					type = bunker
+					level = 7
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+}

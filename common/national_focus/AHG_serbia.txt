@@ -1,0 +1,257 @@
+focus_tree = {
+	id = serbian_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SER
+		}
+	}
+	continuous_focus_position = { x = 0 y = 1110 }
+	initial_show_position = {
+		x = 0
+	}
+
+	
+	default = no
+	focus = {
+		id = SER_osakachena_pobeda
+		icon = SER_gfx_osakachena_pobeda
+		x = 6
+		y = 0
+		cost = 10
+		completion_reward = {
+			add_ideas = {
+				SER_idea_osakachena_pobeda
+			}
+		}
+	}
+	focus = {
+		id = SER_act_of_union
+		icon = SER_gfx_act_of_union
+		x = 0
+		y = 1
+		prerequisite = { focus = SER_osakachena_pobeda }
+		relative_position_id = SER_osakachena_pobeda
+		cost = 10
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	focus = {
+		id = SER_balkan_pact
+		icon = SER_gfx_balkan_pact
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SER_act_of_union
+		}
+		relative_position_id = SER_act_of_union
+		cost = 10
+		completion_reward = {
+			create_faction = "Balkan Pact"
+			add_to_faction = SER
+			every_country = {
+				news_event = {
+					id = SER_balkan_war.9
+					days = 1
+				}
+			}
+			ROM = {
+				country_event = {
+					id = SER_balkan_war.1
+					days = 1
+				}
+			}
+			GRE = {
+				country_event = {
+					id = SER_balkan_war.2
+					days = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = SER_split_transylvania
+		icon = SER_gfx_split_transylvania
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = SER_balkan_pact
+		}
+		relative_position_id = SER_balkan_pact
+		cost = 10
+		completion_reward = {
+			declare_war_on = {
+				target = TRA
+				type = take_state_focus
+				generator = { 764 }
+				generator = { 82 }
+			}
+			IF = {
+				limit = {	has_country_flag = ROM_joined }
+				ROM = {
+					declare_war_on = {
+					target = TRA
+					type = take_state_focus
+					generator = { 83 }
+					}
+				}
+			} 
+			add_named_threat = { 
+				threat = 5 
+				name = SER_balkan_wars_threat
+			}
+		}
+	}
+	focus = {
+		id = SER_split_albania
+		icon = SER_gfx_split_albania
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = SER_balkan_pact
+		}
+		relative_position_id = SER_balkan_pact
+		cost = 10
+		completion_reward = {
+			declare_war_on = {
+				target = ALB
+				type = take_state_focus
+				generator = { 44 }
+			}
+			IF = {
+				limit = { has_country_flag = GRE_joined }
+				GRE = {
+					declare_war_on = {
+					target = ALB
+					type = take_state_focus
+					generator = { 805 }
+					}
+				}
+			}
+			add_named_threat = { 
+				threat = 5 
+				name = SER_balkan_wars_threat
+			}
+		}
+	}
+	focus = {
+		id = SER_reach_out_croatia
+		icon = SER_gfx_reach_out_croatia
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = SER_balkan_pact
+		}
+		relative_position_id = SER_balkan_pact
+		cost = 10
+		completion_reward = {
+		CRO = {
+			country_event = {
+				id = SER_balkan_war.3
+				days = 1
+			}
+		}
+		}
+	}
+	focus = {
+		id = SER_split_bosnia
+		icon = SER_gfx_split_bosnia
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = SER_reach_out_croatia
+		}
+		available = {
+			has_country_flag = CRO_agreed
+		}
+		mutually_exclusive = {
+			focus = SER_solo_ultimatum_to_bosnia
+		}
+		relative_position_id = SER_balkan_pact
+		cost = 10
+		completion_reward = {
+			declare_war_on = {
+				target = BOS
+				type = take_state_focus
+				generator = { 804 }
+			}
+			CRO = {
+				declare_war_on = {
+				target = BOS
+				type = take_state_focus
+				generator = { 104 }
+				}
+			}
+			add_named_threat = { 
+			threat = 5 
+			name = SER_balkan_wars_threat
+			}
+		}
+	}
+	focus = {
+		id = SER_solo_ultimatum_to_bosnia
+		icon = SER_gfx_solo_ultimatum_to_bosnia
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = SER_reach_out_croatia
+		}
+		available = {
+			NOT = {
+			has_country_flag = CRO_agreed
+			}
+		}
+		mutually_exclusive = {
+			focus = SER_split_bosnia
+		}
+		relative_position_id = SER_balkan_pact
+		cost = 10
+		completion_reward = {
+			country_event = {
+				id = SER_balkan_war.4
+				days = 1
+			}
+			add_named_threat = { 
+			threat = 5 
+			name = SER_balkan_wars_threat
+			}
+		}
+	}
+	focus = {
+		id = SER_declare_south_slavic_unity
+		icon = SER_gfx_declare_south_slavic_unity
+		x = 1
+		y = 1
+		relative_position_id = SER_split_bosnia
+		prerequisite = {
+			focus = SER_split_albania
+		}
+		prerequisite = {
+			focus = SER_split_transylvania
+		}
+		prerequisite = {
+			focus = SER_split_bosnia
+			focus = SER_solo_ultimatum_to_bosnia
+		}
+		completion_reward = {
+			add_stability = 0.1
+			set_cosmetic_tag = SER_YUG
+			#add_state_core = 44
+			add_state_core = 804
+			add_state_core = 104
+			#add_state_core = 764
+			#add_state_core = 82
+			add_state_core = 103
+			add_state_core = 163
+			add_state_core = 45
+			add_state_core = 109
+			add_state_core = 102
+			add_state_core = 736
+		}
+	}
+	
+}

@@ -1,0 +1,46 @@
+spriteTypes = {	
+
+
+
+	SpriteType = {
+		name = "GFX_idea_traits_strip"
+		texturefile = "gfx/interface/ideas/idea_traits_strip.dds"
+		noOfFrames = 17		
+	}
+	#######
+	##ITA##
+	#######
+	spriteType = {
+		name = "GFX_idea_risorgimento"
+		texturefile = "gfx/interface/ideas/idea_risorgimento.png"
+	}
+	#######
+	##FRA##
+	#######
+	spriteType = {
+		name = "GFX_idea_collapse_of_the_third_republic"
+		texturefile = "gfx/interface/ideas/idea_collapse.png"
+	}
+	spriteType = {
+		name = "GFX_idea_collapse_of_the_third_republic_2"
+		texturefile = "gfx/interface/ideas/idea_collapse.png"
+	}
+	spriteType = {
+		name = "GFX_idea_community"
+		texturefile = "gfx/interface/ideas/idea_community.png"
+	}
+	#######
+	##BAY##
+	#######
+	spriteType = {
+		name = "GFX_idea_coffee"
+		texturefile = "gfx/interface/ideas/idea_coffee.png"
+	}
+	#######
+	##CHI##
+	#######
+	spriteType = {
+		name = "GFX_idea_jianguo_shidai"
+		texturefile = "gfx/interface/ideas/idea_jianguo_shidai.png"
+	}
+}

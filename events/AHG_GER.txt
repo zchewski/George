@@ -1,0 +1,586 @@
+add_namespace = GER
+
+country_event = {
+	id = GER.1
+	title = GER.1.t #Germany demands schl-hol
+	desc = GER.1.d 
+	picture = GFX_event_schleswig
+	is_triggered_only = yes
+	option = { #give it
+		name = GER.1.a 
+		GER = {
+			annex_country = {
+				target = SHL
+				transfer_troops = yes
+			}
+			country_event = { 
+				id = GER.2
+				hours = 6
+			}
+			add_named_threat = { 
+			threat = 5 
+			name = "Anschluss of Schleswig"
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				is_in_faction = yes
+				factor = 0.25
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = { tag = GER ratio > 0.25 }
+			}
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = GER ratio > 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio > 1.5 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio > 3 }
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = GER ratio > 5 }
+			}
+		}
+		custom_effect_tooltip =  GAME_OVER_TT
+	}
+	option = { #no
+		name = GER.1.b 
+		GER = {
+			add_opinion_modifier = {
+				target = SHL
+				modifier = medium_decrease
+			}
+			country_event = { 
+				id = GER.3
+				hours = 6
+			}
+		}
+	}
+}
+country_event = {
+	id = GER.2
+	title = GER.2.t #SHL Joined
+	desc = GER.2.d 
+	picture = GFX_event_schleswig
+	is_triggered_only = yes
+	option = { 
+		name = GER.2.a
+	}
+}
+country_event = {
+	id = GER.3
+	title = GER.3.t #SHL refused
+	desc = GER.3.d 
+	picture = GFX_event_schleswig
+	is_triggered_only = yes
+	option = { #rats
+		name = GER.3.a
+	}
+	option = { #get em
+		ai_chance = {
+			base = 90
+		}
+		name = GER.3.b
+		create_wargoal = {
+			type = annex_everything
+			target = SHL
+		}
+	}
+}
+
+country_event = {
+	id = GER.4
+	title = GER.4.t #Germany demands sudeten
+	desc = GER.4.d 
+	picture = GFX_event_sudeten
+	is_triggered_only = yes
+	option = { #give it
+		name = GER.4.a 
+		GER = {
+			set_state_owner = 69
+			set_state_owner = 74
+			add_state_core = 74
+			add_state_core = 69
+			country_event = { 
+				id = GER.5
+				hours = 6
+			}
+			add_named_threat = { 
+			threat = 5 
+			name = "Occupation of the Sudetenland"
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				is_in_faction = yes
+				factor = 0.25
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = { tag = GER ratio > 0.25 }
+			}
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = GER ratio > 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio > 1.5 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio > 3 }
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = GER ratio > 5 }
+			}
+		}
+	}
+	option = { #no
+		name = GER.4.b 
+		GER = {
+			add_opinion_modifier = {
+				target = CZE
+				modifier = medium_decrease
+			}
+			country_event = { 
+				id = GER.6
+				hours = 6
+			}
+		}
+	}
+}
+country_event = {
+	id = GER.5
+	title = GER.5.t #CZE Joined
+	desc = GER.5.d 
+	picture = GFX_event_sudeten
+	is_triggered_only = yes
+	option = { 
+		name = GER.5.a
+		#GER = {
+			#add_state_core = 69
+		#}
+	}
+}
+country_event = {
+	id = GER.6
+	title = GER.6.t #CZE refused
+	desc = GER.6.d 
+	picture = GFX_event_sudeten
+	is_triggered_only = yes
+	option = { #rats
+		name = GER.6.a
+	}
+	option = { #get em
+		ai_chance = {
+			base = 90
+		}
+		name = GER.6.b
+		create_wargoal = {
+			type = take_state_focus
+			generator = { 69 }
+			generator = { 74 }
+			target = CZE
+		}
+	}
+}
+
+country_event = {
+	id = GER.7
+	title = GER.7.t #Germany demands swiss
+	desc = GER.7.d 
+	picture = GFX_event_schleswig
+	is_triggered_only = yes
+	option = { #give it
+		name = GER.7.a 
+		GER = {
+			annex_country = {
+				target = SWI
+				transfer_troops = yes
+			}
+			add_state_core = 3
+			#add_state_core = 658
+			add_state_core = 845
+			add_state_core = 847
+			add_state_core = 846
+			add_state_core = 151
+			country_event = { 
+				id = GER.8
+				hours = 6
+			}
+			add_named_threat = { 
+			threat = 5 
+			name = "Anschluss of Switzerland"
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				is_in_faction = yes
+				factor = 0.25
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = { tag = GER ratio > 0.25 }
+			}
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = GER ratio > 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio > 1.5 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio > 3 }
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = GER ratio > 5 }
+			}
+		}
+		custom_effect_tooltip =  GAME_OVER_TT
+	}
+	option = { #no
+		name = GER.7.b 
+		GER = {
+			add_opinion_modifier = {
+				target = SWI
+				modifier = medium_decrease
+			}
+			country_event = { 
+				id = GER.9
+				hours = 6
+			}
+		}
+	}
+}
+country_event = {
+	id = GER.8
+	title = GER.8.t #SWI Joined
+	desc = GER.8.d 
+	picture = GFX_event_swiss
+	is_triggered_only = yes
+	option = { 
+		name = GER.8.a
+	}
+}
+country_event = {
+	id = GER.9
+	title = GER.9.t #SWI refused
+	desc = GER.9.d 
+	picture = GFX_event_swiss
+	is_triggered_only = yes
+	option = { #rats
+		name = GER.9.a
+	}
+	option = { #get em
+		ai_chance = {
+			base = 90
+		}
+		name = GER.9.b
+		create_wargoal = {
+			type = annex_everything
+			target = SWI
+		}
+	}
+}
+country_event = {
+	id = GER.10
+	title = GER.10.t #Germany demands aus
+	desc = GER.10.d 
+	picture = GFX_event_schleswig
+	is_triggered_only = yes
+	option = { #give it
+		name = GER.10.a 
+		GER = {
+			annex_country = {
+				target = AUS
+				transfer_troops = yes
+			}
+			add_state_core = 4
+			add_state_core = 152
+			add_state_core = 153
+			add_state_core = 848
+			country_event = { 
+				id = GER.11
+				hours = 6
+			}
+			add_named_threat = { 
+			threat = 5 
+			name = "Anschluss of Austria"
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				is_in_faction = yes
+				factor = 0.25
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = { tag = GER ratio > 0.25 }
+			}
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = GER ratio > 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio > 1.5 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio > 3 }
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = GER ratio > 5 }
+			}
+		}
+		custom_effect_tooltip =  GAME_OVER_TT
+	}
+	option = { #no
+		name = GER.10.b 
+		GER = {
+			add_opinion_modifier = {
+				target = AUS
+				modifier = medium_decrease
+			}
+			country_event = { 
+				id = GER.12
+				hours = 6
+			}
+		}
+	}
+}
+country_event = {
+	id = GER.11
+	title = GER.11.t #SWI Joined
+	desc = GER.11.d 
+	picture = GFX_event_swiss
+	is_triggered_only = yes
+	option = { 
+		name = GER.11.a
+	}
+}
+country_event = {
+	id = GER.12
+	title = GER.12.t #SWI refused
+	desc = GER.12.d 
+	picture = GFX_event_swiss
+	is_triggered_only = yes
+	option = { #rats
+		name = GER.12.a
+	}
+	option = { #get em
+		ai_chance = {
+			base = 90
+		}
+		name = GER.12.b
+		create_wargoal = {
+			type = annex_everything
+			target = AUS
+		}
+	}
+}
+
+country_event = {
+	id = GER.13
+	title = GER.13.t #Germany demands sudtirol
+	desc = GER.13.d 
+	picture = GFX_event_sudeten
+	is_triggered_only = yes
+	option = { #give it
+		name = GER.13.a 
+		GER = {
+			set_state_owner = 39
+			add_state_core = 39
+			set_state_owner = 850
+			add_state_core = 850
+			country_event = { 
+				id = GER.14
+				hours = 6
+			}
+			add_named_threat = { 
+			threat = 5 
+			name = "Occupation of Sudtirol"
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				is_in_faction = yes
+				factor = 0.25
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = { tag = GER ratio > 0.25 }
+			}
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = GER ratio > 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio > 1.5 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio > 3 }
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = GER ratio > 5 }
+			}
+		}
+	}
+	option = { #no
+		name = GER.13.b 
+		GER = {
+			add_opinion_modifier = {
+				target = VNC
+				modifier = medium_decrease
+			}
+			country_event = { 
+				id = GER.15
+				hours = 6
+			}
+		}
+	}
+}
+country_event = {
+	id = GER.14
+	title = GER.14.t #VNC Joined
+	desc = GER.14.d 
+	picture = GFX_event_sudeten
+	is_triggered_only = yes
+	option = { 
+		name = GER.14.a
+	}
+}
+country_event = {
+	id = GER.15
+	title = GER.15.t #CZE refused
+	desc = GER.15.d 
+	picture = GFX_event_sudeten
+	is_triggered_only = yes
+	option = { #rats
+		name = GER.15.a
+	}
+	option = { #get em
+		ai_chance = {
+			base = 90
+		}
+		name = GER.15.b
+		create_wargoal = {
+			type = take_state_focus
+			generator = { 39 }
+			target = VNC
+		}
+	}
+}
+country_event = {
+	id = GER.16
+	title = GER.16.t #Germany demands sudeten
+	desc = GER.16.d 
+	picture = GFX_event_sudeten
+	is_triggered_only = yes
+	option = { #give it
+		name = GER.16.a 
+		GER = {
+			set_state_owner = 188
+			country_event = { 
+				id = GER.17
+				hours = 6
+			}
+			add_named_threat = { 
+			threat = 5 
+			name = "Cessation of Memel"
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				is_in_faction = yes
+				factor = 0.25
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = { tag = GER ratio > 0.25 }
+			}
+			modifier = {
+				factor = 1.5
+				strength_ratio = { tag = GER ratio > 0.5 }
+			}
+			modifier = {
+				factor = 0.5
+				strength_ratio = { tag = GER ratio > 1.5 }
+			}
+			modifier = {
+				factor = 0.2
+				strength_ratio = { tag = GER ratio > 3 }
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = { tag = GER ratio > 5 }
+			}
+		}
+	}
+	option = { #no
+		name = GER.16.b 
+		GER = {
+			add_opinion_modifier = {
+				target = LIT
+				modifier = medium_decrease
+			}
+			country_event = { 
+				id = GER.18
+				hours = 6
+			}
+		}
+	}
+}
+country_event = {
+	id = GER.17
+	title = GER.17.t #CZE Joined
+	desc = GER.17.d 
+	picture = GFX_event_sudeten
+	is_triggered_only = yes
+	option = { 
+		name = GER.17.a
+	}
+}
+country_event = {
+	id = GER.18
+	title = GER.18.t #CZE refused
+	desc = GER.18.d 
+	picture = GFX_event_sudeten
+	is_triggered_only = yes
+	option = { #rats
+		name = GER.18.a
+	}
+	option = { #get em
+		ai_chance = {
+			base = 90
+		}
+		name = GER.18.b
+		create_wargoal = {
+			type = take_state_focus
+			generator = { 188 }
+			target = LIT
+		}
+	}
+}

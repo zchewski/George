@@ -1,0 +1,36 @@
+capital = 484
+
+oob = "SON_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+
+
+set_country_flag = monroe_doctrine
+set_war_support = 0.1
+set_convoys = 10
+
+set_politics = {
+	ruling_party = communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	communism = 69
+	democratic = 31
+}
+
+create_country_leader = {
+	name = "Caryl ap Rhys Pryce"
+	desc = ""
+	picture = "gfx/leaders/SON/Carol_Ap_Rhys_Pryce.png"
+	expire = "1956.1.1"
+	ideology = anarchist_communism
+	traits = {
+		#
+	}
+}

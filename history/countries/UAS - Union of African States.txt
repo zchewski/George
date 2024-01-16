@@ -1,0 +1,70 @@
+capital = 779
+
+create_country_leader = {
+	
+	name = "Ahmed Sékou Touré"
+	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_3.dds"
+	expire = "1965.1.1"
+	ideology = socialism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	
+	name = "Delta Condé"
+	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_2.dds"
+	expire = "1965.1.1"
+	ideology = gaddafiism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	
+	name = "Ahmed Sékou Touré"
+	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_3.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	
+	name = "Mohammed al-Gaugau"
+	picture = "gfx//leaders//Africa//Portrait_Africa_Generic_3.dds"
+	expire = "1965.1.1"
+	ideology = falangism
+	traits = {
+		#
+	}
+}
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	early_fighter = 1
+	gw_artillery = 1
+	tech_support = 1
+}
+
+set_convoys = 20
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 20
+	fascism = 15
+	communism = 40
+	georgism = 25
+}

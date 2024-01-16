@@ -1,0 +1,44 @@
+capital = 405
+
+#oob = ""
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+
+set_convoys = 5
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 50
+	fascism = 1
+	communism = 20
+	neutrality = 29
+}
+
+create_country_leader = {
+	
+	name = "Mustafa Shokay"
+	picture = "gfx//leaders//KOK//Portrait_TRK_Mustafa_Shokay.png"
+	expire = "1965.1.1"
+	ideology = liberalism
+	traits = {
+		#
+	}
+}
+create_country_leader = {
+	
+	name = "Turar Ryskulov"
+	picture = "gfx//leaders//KOK//Portrait_TRK_Turar_Ryskulov.png"
+	expire = "1965.1.1"
+	ideology = stalinism
+	traits = {
+		#
+	}
+}

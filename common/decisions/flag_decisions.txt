@@ -1,0 +1,25 @@
+AST_new_flag_category = {
+    AST_new_flag = {
+		cost = 15
+		available = {
+			NOT = {
+				has_cosmetic_tag = AST2
+			}
+		}
+        complete_effect = {
+		   set_cosmetic_tag = AST2
+		   #add_idea = AST_cosm_AST2
+	    }
+      }
+	AST_old_flag = {
+		cost = 15
+        complete_effect = {
+		   set_cosmetic_tag = AST_jack
+	    }
+		available = {
+			NOT = {
+				has_cosmetic_tag = AST_jack
+			}
+		}
+      }
+}
